@@ -40,7 +40,7 @@ jobs:
     - name: Checkout GitOps repo
       uses: actions/checkout@v2
       with:
-        repository: gimlet-io/github-actions-example-gitops
+        repository: gimlet-io/fosdem-2021-gitops
         token: ${{ secrets.PAT }} # `PAT` is a secret that contains your Personal Access Token with `repo` scope
         path: gitops
 
