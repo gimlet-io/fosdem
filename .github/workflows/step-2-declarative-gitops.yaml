@@ -1,4 +1,4 @@
-name: "Step 2+: Decalrative GitOps"
+name: "Step 2: Decalrative GitOps"
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: "Step1: Naive GitOps"
+name: "Step 1: Naive GitOps"
 
 on:
   push:
