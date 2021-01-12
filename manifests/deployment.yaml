@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: github-actions-example
-  namespace: my-team
+  namespace: default
 spec:
   replicas: 1
   selector:
