@@ -38,5 +38,5 @@ jobs:
         run: |
           kubectl cluster-info
           kubectl get pods -n kube-system
-          cat manifests/deployment.yaml | envsubst | kubectl apply -f
-          cat manifests/service.yaml | kubectl apply -f
+          cat manifests/deployment.yaml | envsubst | kubectl apply -f -
+          cat manifests/service.yaml | kubectl apply -f -
