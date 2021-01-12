@@ -8,5 +8,5 @@ chart:
 values:
   replicas: 1
   image:
-    repository: ghcr.io/gimlet-io/github-actions-example
+    repository: ghcr.io/gimlet-io/fosdem-2021
     tag: {{ .GITHUB_SHA }}
