@@ -51,7 +51,7 @@ jobs:
           -f .gimlet/preview.yaml |
             ./gimlet gitops write -f - \
               --env preview \
-              --app fosdem-2021-{{ .GITHUB_HEAD_REF }} \
+              --app fosdem-2021-$GITHUB_HEAD_REF \
               --gitops-repo-path gitops \
               -m "Previewing fosdem-2021-$GITHUB_HEAD_REF"
         (cd gitops/; git push origin main)
