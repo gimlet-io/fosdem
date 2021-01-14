@@ -1,4 +1,4 @@
-# github-actions-example
+# fosdem-2021
 
 Example repo for using Gimlet CLI with Github Actions
 
@@ -6,11 +6,11 @@ Check the Gimlet manifest file in `.gimlet/` and the Github Actions code under `
 
 ## Builds
 
-https://github.com/gimlet-io/github-actions-example/actions
+https://github.com/gimlet-io/fosdem-2021/actions
 
 ## GitOps repo
 
-https://github.com/gimlet-io/github-actions-example-gitops
+https://github.com/gimlet-io/fosdem-2021-gitops
 
 ## Forking this repo
 
