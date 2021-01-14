@@ -50,7 +50,7 @@ jobs:
           -f .gimlet/staging.yaml |
             ./gimlet gitops write -f - \
               --env staging \
-              --app github-actions-example \
+              --app fosdem-2021 \
               --gitops-repo-path gitops \
               -m "Releasing $GITHUB_SHA"
         (cd gitops/; git push origin main)

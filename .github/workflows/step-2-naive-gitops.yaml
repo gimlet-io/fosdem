@@ -46,10 +46,13 @@ jobs:
 
     - name: Write to GitOps repository
       run: |
-        cat manifests/deployment.yaml | envsubst | \
-          ./gimlet gitops write -f - \
-            --env staging \
-            --app fosdem-2021 \
-            --gitops-repo-path gitops \
-            -m "Releasing $GITHUB_SHA"
+        mkdir templated-manifests
+        cat manifests/deployment.yaml | envsubst > templated-manifests/deployment.yaml
+        cat manifests/service.yaml | envsubst > templated-manifests/service.yaml
+        
+        ./gimlet gitops write -f templated-manifests/ \
+          --env staging \
+          --app fosdem-2021 \
+          --gitops-repo-path gitops \
+          -m "Releasing $GITHUB_SHA"
         (cd gitops/; git push origin main)

@@ -1,0 +1,12 @@
+app: fosdem-2021-{{ .GITHUB_HEAD_REF }}
+env: preview
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.10.0
+values:
+  replicas: 1
+  image:
+    repository: ghcr.io/gimlet-io/fosdem-2021
+    tag: {{ .GITHUB_SHA }}

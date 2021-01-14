@@ -1,8 +1,9 @@
 name: "Step 3+: Preview Environments"
 
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -47,10 +48,10 @@ jobs:
     - name: Write to GitOps repository
       run: |
         ./gimlet manifest template \
-          -f .gimlet/staging.yaml |
+          -f .gimlet/preview.yaml |
             ./gimlet gitops write -f - \
-              --env staging \
-              --app github-actions-example \
+              --env preview \
+              --app fosdem-2021-{{ .GITHUB_HEAD_REF }} \
               --gitops-repo-path gitops \
-              -m "Releasing $GITHUB_SHA"
+              -m "Previewing fosdem-2021-$GITHUB_HEAD_REF"
         (cd gitops/; git push origin main)
