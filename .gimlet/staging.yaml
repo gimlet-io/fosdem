@@ -1,6 +1,6 @@
-app: github-actions-example
+app: fosdem-2021
 env: staging
-namespace: my-team
+namespace: default
 chart:
   repository: https://chart.onechart.dev
   name: onechart

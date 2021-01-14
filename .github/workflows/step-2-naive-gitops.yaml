@@ -1,4 +1,4 @@
-name: "Step 2: Decalrative GitOps"
+name: "Step 2: Naive GitOps"
 
 on:
   push:
@@ -46,11 +46,10 @@ jobs:
 
     - name: Write to GitOps repository
       run: |
-        ./gimlet manifest template \
-          -f .gimlet/staging.yaml |
-            ./gimlet gitops write -f - \
-              --env staging \
-              --app github-actions-example \
-              --gitops-repo-path gitops \
-              -m "Releasing $GITHUB_SHA"
+        cat manifests/deployment.yaml | envsubst | \
+          ./gimlet gitops write -f - \
+            --env staging \
+            --app fosdem-2021 \
+            --gitops-repo-path gitops \
+            -m "Releasing $GITHUB_SHA"
         (cd gitops/; git push origin main)

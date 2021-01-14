@@ -1,4 +1,4 @@
-name: "Step 2+: Preview Environments"
+name: "Step 3+: Preview Environments"
 
 on:
   push:

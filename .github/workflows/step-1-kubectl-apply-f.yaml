@@ -1,4 +1,4 @@
-name: "Step 0: kubectl apply -f"
+name: "Step 1: kubectl apply -f"
 
 on:
   push:
